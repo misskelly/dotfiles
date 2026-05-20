@@ -5,13 +5,15 @@ DOTFILES="$HOME/.dotfiles"
 
 echo "Setting up symlinks 🔗..."
 
-files=(".zshrc" "starship.toml")
+declare -A symlinks
+symlinks["$DOTFILES/.zshrc"]="$HOME/.zshrc"
+symlinks["$DOTFILES/ghostty/config"]="$HOME/.config/ghostty/config"
 
-for file in "${files[@]}"; do
-  # Remove existing file/symlink if present
-  [ -e "$HOME/$file" ] && rm "$HOME/$file"
-  ln -s "$DOTFILES/$file" "$HOME/$file"
-  echo "  ✓ Linked $file"
+for src in "${!symlinks[@]}"; do
+  dest="${symlinks[$src]}"
+  [ -e "$dest" ] && rm "$dest"
+  ln -s "$src" "$dest"
+  echo "  ✓ Linked $src -> $dest"
 done
 
 echo "Done! 🎉"
