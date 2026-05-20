@@ -1,0 +1,78 @@
+# Ghostty Config
+# Lives at: ~/.config/ghostty/config
+# Dotfiles: symlink from ~/.dotfiles/ghostty/config
+
+# -------------------------------------------
+# Font
+# -------------------------------------------
+font-family = MonaspiceNe Nerd Font
+font-size = 14
+
+# Uncomment to try alternatives:
+# font-family = MesloLGS Nerd Font
+# font-family = JetBrainsMono Nerd Font
+
+# -------------------------------------------
+# Theme
+# -------------------------------------------
+# A calm dark theme that's easy on the eyes.
+# Full list: https://ghostty.org/docs/config/reference#theme
+theme = catppuccin-mocha
+
+# Other options worth trying:
+# theme = Tokyo Night
+# theme = nord
+# theme = Dracula
+
+# -------------------------------------------
+# Cursor
+# -------------------------------------------
+cursor-style = bar
+cursor-style-blink = true
+
+# -------------------------------------------
+# Window
+# -------------------------------------------
+window-padding-x = 12
+window-padding-y = 12
+
+# Keep window decorations (title bar)
+# Set to false for a cleaner borderless look
+window-decoration = true
+
+# Remember window size between sessions
+window-save-state = always
+
+# -------------------------------------------
+# Scrollback
+# -------------------------------------------
+scrollback-limit = 10000
+
+# -------------------------------------------
+# Shell Integration
+# -------------------------------------------
+# Ghostty has built-in shell integration -- this enables
+# features like better cursor positioning and prompt marking
+shell-integration = zsh
+
+# -------------------------------------------
+# Keybinds
+# -------------------------------------------
+# New tab/window feel similar to iTerm2
+keybind = super+t=new_tab
+keybind = super+n=new_window
+keybind = super+w=close_surface
+
+# Split panes (Ghostty calls them splits)
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+
+# Navigate splits
+keybind = super+alt+left=goto_split:left
+keybind = super+alt+right=goto_split:right
+keybind = super+alt+up=goto_split:up
+keybind = super+alt+down=goto_split:down
+
+# Navigate tabs
+keybind = super+shift+]= next_tab
+keybind = super+shift+[=previous_tab
